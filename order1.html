@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utils.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="one.css">
+
+    
+
+<link rel="stylesheet" href="styleforproductpage.css">
+</head>
+<body>
+    <header>
+
+        <nav>
+            <div class="logo">
+                <img src="Goo Businesses (1).png" height="73px">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/whyus">Why us?</a></li>
+            </ul>
+        <form class="form" action="/searching" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="7CDas7vzfBAtlVm51C29UbVMj23mh4XjviNFmYu0eyV9Xila2EYvXQJQf4OU0sla">
+            <div class="search">
+                <input class="form-ele1"  type="text" id="searchbarID" name="seachbar" placeholder="Search here..." width="20vw">
+            </div>
+            <div class="btn">
+                <button class="bttn" type="submit">Search</button>
+            </div>
+        </form>
+
+        <a href="/searching"><div class="navallproduct">All Services</div></a>
+
+        </nav>
+
+        <a href="/freetrail" class="freeTrl bblink">Get Your<br>Free Trial<br>up to $30</a>
+    </header>
+    <section class="order-form">
+        <h2>Place Your Order</h2>
+        <form action="" method="post" id="orderForm">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" onchange="updateServiceDetails()" required>
+                <option value="service1">Service 1</option>
+                <option value="service2">Service 2</option>
+                <option value="service3">Service 3</option>
+            </select>
+
+            <div id="serviceDetails">
+                <label for="price">Price:</label>
+                <span id="priceDisplay">$500</span>
+                
+                <label for="shortDescription">Short Description:</label>
+                <p id="shortDescriptionDisplay">Elevate your online presence with our professional website design service. Our experienced team of designers will create a visually stunning and user-friendly website tailored to your brand.</p>
+            </div>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <script>
+        function updateServiceDetails() {
+            var serviceSelect = document.getElementById("service");
+            var priceDisplay = document.getElementById("priceDisplay");
+            var shortDescriptionDisplay = document.getElementById("shortDescriptionDisplay");
+
+            if (serviceSelect.value === "service1") {
+                priceDisplay.textContent = "$500";
+                shortDescriptionDisplay.textContent = "Elevate your online presence with our professional website design service. Our experienced team of designers will create a visually stunning and user-friendly website tailored to your brand.";
+            } else if (serviceSelect.value === "service2") {
+                priceDisplay.textContent = "$300/month";
+                shortDescriptionDisplay.textContent = "Boost your brand visibility and engage with your audience through our social media marketing campaign. Our experts will craft compelling content, run targeted ad campaigns, and analyze performance metrics to optimize your social media presence.";
+            } else if (serviceSelect.value === "service3") {
+                priceDisplay.textContent = "$200 one-time setup fee + $100/month";
+                shortDescriptionDisplay.textContent = "Improve your website's search engine rankings and drive organic traffic with our comprehensive SEO package. Our SEO experts will conduct keyword research, optimize on-page elements, and build high-quality backlinks to enhance your website's visibility on Google and other search engines.";
+            }
+            // Add more conditions as needed for additional services
+        }
+    </script>
+</body>
+</html>
